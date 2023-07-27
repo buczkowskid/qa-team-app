@@ -1,6 +1,6 @@
-# QA Unit Test Course
+# Unit Tests Course
 
-This project is created to introduce React basics and learn about unit tests.
+This project is created to learn about unit tests.
 
 ## Available Scripts
 
