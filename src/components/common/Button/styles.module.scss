@@ -1,0 +1,57 @@
+@use "~@networkraildigitalfactory/react-components/src/shared/scss/modules/colors" as colors;
+@use "~@networkraildigitalfactory/react-components/src/shared/scss/modules/light-theme/colors" as
+  lightThemeColors;
+@use "~@networkraildigitalfactory/react-components/src/shared/scss/modules/light-theme/elevations"
+  as light-theme-elevations;
+@use "~@networkraildigitalfactory/react-components/src/shared/scss/modules/utilities" as utilities;
+
+.button {
+  transition: utilities.$transition-default-all;
+  border-radius: utilities.$border-radius;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.6rem;
+  padding: 0 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  height: 3.6rem;
+  border: none;
+
+  @include light-theme-elevations.elevation-1;
+  color: colors.$bg-main-color;
+  background-color: colors.$button__primary__enabled-color;
+
+  &:focus {
+    background-color: colors.$button__primary__focussed-color;
+  }
+
+  &:hover {
+    background-color: colors.$button__primary__hover-color;
+  }
+
+  &:active {
+    @include light-theme-elevations.no-elevation;
+    background-color: colors.$button__primary__pressed-color;
+  }
+
+  &:disabled {
+    @include light-theme-elevations.no-elevation;
+    background-color: lightThemeColors.$arch-tints__divider-color;
+    color: lightThemeColors.$arch-tints__disabled-color;
+  }
+
+  .iconWr {
+    color: inherit;
+    font-size: 1.8rem;
+    margin-right: 1rem;
+  }
+
+  &__rounded {
+    text-transform: none;
+    border-radius: utilities.$border-radius-xl;
+  }
+}

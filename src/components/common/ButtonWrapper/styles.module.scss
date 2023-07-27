@@ -1,0 +1,12 @@
+.buttonsWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.alignToLeft {
+  justify-content: flex-start;
+}
+
+.alignToRight {
+  justify-content: flex-end;
+}

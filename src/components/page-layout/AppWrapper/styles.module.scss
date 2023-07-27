@@ -1,0 +1,18 @@
+@import "~@networkraildigitalfactory/react-components/src/shared/scss/mixins/respond-to";
+
+.contentWrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  height: -webkit-fill-available;
+}
+
+.insideWrapper {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+}
+
+.content {
+  padding: 1.6rem 1.6rem;
+}
