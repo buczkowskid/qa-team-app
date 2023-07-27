@@ -1,0 +1,36 @@
+selektor {
+  właściwość: wartość;
+}
+/* Zmieniamy kolor tła dla całego dokumentu na lekko szary */
+body {
+    background-color: #f2f2f2;
+  }
+  
+  /* Ustalamy styl dla nagłówków h1 */
+  h1, h5 {
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  /* Nadajemy paragrafom lekko szary kolor tekstu i margines na dole */
+  p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Ustalamy wygląd dla input */
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .formInput {
+    padding: 10px;
+    border: 1px solid blue;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  

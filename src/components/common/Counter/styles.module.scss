@@ -8,3 +8,8 @@
   color: vars.$primary-color;
   font-size: 20px;
 }
+
+.buttonsWrapper {
+  display: flex;
+  justify-content: space-between;
+}

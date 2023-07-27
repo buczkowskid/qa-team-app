@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
-import ButtonsWrapper from "../ButtonWrapper/ButtonsWrapper";
 import styles from "./styles.module.scss";
 
 interface CounterPropsInterface {
@@ -15,14 +14,14 @@ const Counter: React.FC<CounterPropsInterface> = ({ initialCount = 0 }) => {
       <p className={styles.counter} data-testid="counter-display">
         Count: {count}
       </p>
-      <ButtonsWrapper>
+      <div className={styles.buttonsWrapper}>
         <Button dataTestId="decrease-button" onClick={() => setCount(count - 1)}>
           Decrease
         </Button>
         <Button dataTestId="increase-button" onClick={() => setCount(count + 1)}>
           Increase
         </Button>
-      </ButtonsWrapper>
+      </div>
     </>
   );
 };
