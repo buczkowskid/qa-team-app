@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { Yup } from "@networkraildigitalfactory/react-components";
 import Button from "components/common/Button/Button";
-import FormikInput from "components/common/formik/FormikInput/FormikInput";
+import FormikInput from "components/form/formik/FormikInput/FormikInput";
 import { Form, Formik, FormikHelpers } from "formik";
 import React from "react";
 import styles from "./styles.module.scss";

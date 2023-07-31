@@ -1,4 +1,4 @@
-import Input, { InputPropsInterface } from "components/common/Input/Input";
+import Input, { InputPropsInterface } from "components/form/Input/Input";
 import { Field, FieldProps } from "formik";
 import React from "react";
 

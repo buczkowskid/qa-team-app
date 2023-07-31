@@ -5,27 +5,24 @@ import styles from "./styles.module.scss";
 interface ButtonPropsInterface {
   onClick: MouseEventHandler;
   children?: ReactNode;
-  disabled?: boolean;
   icon?: IconsCssClassesEnum;
   htmlAttributes?: React.ButtonHTMLAttributes<HTMLButtonElement>;
   dataTestId?: string;
 }
 
-const Button = ({
+const Button: React.FC<ButtonPropsInterface> = ({
   onClick,
   children,
-  disabled,
   icon,
   htmlAttributes,
   dataTestId,
-}: ButtonPropsInterface): JSX.Element => {
+}: ButtonPropsInterface) => {
   return (
     <button
       type="button"
       {...htmlAttributes}
       onClick={onClick}
       data-testid={dataTestId}
-      disabled={disabled}
       className={styles.button}
     >
       {icon && <i className={`${styles.iconWr} ${icon}`} />}
