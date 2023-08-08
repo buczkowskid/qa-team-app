@@ -1,6 +1,7 @@
 import Button from "components/common/Button/Button";
 import Counter from "components/common/Counter/Counter";
 import RandomImage from "components/common/RandomImage/RandomImage";
+import Stoper from "components/common/Stoper/Stoper";
 import PersonForm, {
   PersonFormFieldsPropsInterface,
 } from "components/pages/PersonalForm/PersonalForm";
@@ -11,7 +12,7 @@ const App = () => {
   const [keyword, setKeyword] = useState<string>("");
 
   const handleSubmit = (values: PersonFormFieldsPropsInterface) => {
-    setKeyword("nature");
+    setKeyword(values.keyword);
   };
 
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <Counter />
       <PersonForm onSubmit={handleSubmit} />
       <RandomImage keyword={keyword} />
+      <Stoper />
     </AppWrapper>
   );
 };
