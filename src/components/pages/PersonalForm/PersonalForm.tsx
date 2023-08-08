@@ -1,57 +1,38 @@
 /* eslint-disable no-console */
-import { Yup } from "@networkraildigitalfactory/react-components";
 import Button from "components/common/Button/Button";
 import FormikInput from "components/form/formik/FormikInput/FormikInput";
-import { Form, Formik, FormikHelpers } from "formik";
+import { Form, Formik } from "formik";
 import React from "react";
+import { validationSchema } from "./personalForm.schema";
 import styles from "./styles.module.scss";
 
-interface FormFields {
+export interface PersonFormFieldsPropsInterface {
   name: string;
   surname: string;
   age: number | string;
+  keyword: string;
 }
-const validationSchema = Yup.object().shape({
-  name: Yup.string()
-    .test("first-letter-uppercase", "First letter must be uppercase", function (value = "") {
-      const firstLetter = value.charAt(0);
-      return firstLetter === firstLetter.toUpperCase();
-    })
-    .required("Name is required"),
-  surname: Yup.string()
-    .test("first-letter-uppercase", "First letter must be uppercase", function (value = "") {
-      const firstLetter = value.charAt(0);
-      return firstLetter === firstLetter.toUpperCase();
-    })
-    .required("Surname is required"),
-  age: Yup.number().min(18, "You must be over 18").required("Age is required"),
-});
+export interface PersonFormPropsInterface {
+  onSubmit: (values: PersonFormFieldsPropsInterface) => void;
+}
 
-const initialValues: FormFields = {
+const initialValues: PersonFormFieldsPropsInterface = {
   name: "",
   surname: "",
   age: "",
+  keyword: "",
 };
 
-const PersonForm: React.FC = () => {
-  const handleSubmit = (values: FormFields, { resetForm }: FormikHelpers<FormFields>) => {
-    console.log(values);
-
-    resetForm();
-  };
-
+const PersonForm: React.FC<PersonFormPropsInterface> = ({ onSubmit }: PersonFormPropsInterface) => {
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
-    >
+    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
       <Form className={styles.form}>
         <FormikInput name="name" label="Name" required />
         <FormikInput name="surname" label="Surname" required />
         <FormikInput name="age" label="Age" required />
+        <FormikInput name="keyword" label="Your keyword" required />
 
-        <Button htmlAttributes={{ type: "submit" }} onClick={() => handleSubmit}>
+        <Button htmlAttributes={{ type: "submit" }} onClick={() => onSubmit}>
           Submit
         </Button>
       </Form>
