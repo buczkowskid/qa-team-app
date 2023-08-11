@@ -2,7 +2,7 @@ import { IconsCssClassesEnum } from "@networkraildigitalfactory/react-components
 import React, { MouseEventHandler, ReactNode } from "react";
 import styles from "./styles.module.scss";
 
-interface ButtonPropsInterface {
+export interface ButtonPropsInterface {
   onClick: MouseEventHandler;
   children?: ReactNode;
   icon?: IconsCssClassesEnum;
@@ -25,7 +25,7 @@ const Button: React.FC<ButtonPropsInterface> = ({
       data-testid={dataTestId}
       className={styles.button}
     >
-      {icon && <i className={`${styles.iconWr} ${icon}`} />}
+      {icon && <i className={`${styles.iconWr} ${icon}`} data-testid={"button-icon"} />}
       {children && <span className={styles.contentWr}>{children}</span>}
     </button>
   );
