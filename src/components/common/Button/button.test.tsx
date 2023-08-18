@@ -1,4 +1,3 @@
-import { screen } from "@testing-library/react";
 import { getRenderedButton } from "./tests-data";
 
 describe("Button", () => {
@@ -15,5 +14,10 @@ describe("Button", () => {
   test("Should not render icon", () => {
     const { iconElement } = getRenderedButton({ icon: undefined });
     expect(iconElement).not.toBeInTheDocument();
+  });
+
+  test("Should have proper attribute", () => {
+    const { buttonElement } = getRenderedButton();
+    expect(buttonElement).toHaveAttribute("type", "submit");
   });
 });

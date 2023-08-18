@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@networkraildigitalfactory/react-components": "^2.2.76",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.64",
     "@types/react": "^18.0.21",

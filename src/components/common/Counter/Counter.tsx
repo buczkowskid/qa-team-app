@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "../Button/Button";
 import styles from "./styles.module.scss";
 
-interface CounterPropsInterface {
+export interface CounterPropsInterface {
   initialCount?: number;
 }
 
