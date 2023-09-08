@@ -32,10 +32,14 @@ function Stoper() {
 
   return (
     <div>
-      <p>Upłynęło czasu: {elapsedTime} sekund</p>
+      <p data-testid="elapsed-time">Upłynęło czasu: {elapsedTime} sekund</p>
       <div className={styles.buttonsWrapper}>
-        <Button onClick={toggleStoper}>{isRunning ? "Zatrzymaj" : "Start"}</Button>
-        <Button onClick={resetStoper}>Resetuj</Button>
+        <Button onClick={toggleStoper} dataTestId="toggle-button">
+          {isRunning ? "Zatrzymaj" : "Start"}
+        </Button>
+        <Button onClick={resetStoper} dataTestId="reset-button">
+          Resetuj
+        </Button>
       </div>
     </div>
   );

@@ -20,6 +20,7 @@ const Input: React.FC<InputPropsInterface> = ({
   required,
   statusText,
 }) => {
+  const inputTestId = `${name}-input`;
   return (
     <div className={styles.container}>
       <span className={styles.label}>{label}</span>
@@ -31,6 +32,7 @@ const Input: React.FC<InputPropsInterface> = ({
         className={styles.input}
         onChange={onChange}
         required={required}
+        data-testid={inputTestId}
       />
       {statusText && <p>{statusText}</p>}
     </div>

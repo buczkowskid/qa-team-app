@@ -1,0 +1,9 @@
+@use "~@networkraildigitalfactory/react-components/src/shared/scss/mixins/_loader-bar";
+
+.fullWidth__progress {
+  @include progress();
+}
+
+.fullWidth__loader {
+  @include loader();
+}

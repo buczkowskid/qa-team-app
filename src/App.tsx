@@ -1,4 +1,8 @@
-import Button from "components/common/Button/Button";
+import {
+  LoaderVariantsEnum,
+  LoadingBar,
+  LogoutButton,
+} from "@networkraildigitalfactory/react-components";
 import Counter from "components/common/Counter/Counter";
 import RandomImage from "components/common/RandomImage/RandomImage";
 import Stoper from "components/common/Stoper/Stoper";
@@ -17,7 +21,8 @@ const App = () => {
 
   return (
     <AppWrapper>
-      <Button onClick={() => alert("You clicked me")}>Click Me!</Button>
+      <LoadingBar variant={LoaderVariantsEnum.PROGRESS} />
+      <LogoutButton onLogout={async () => alert("Logout blocked!")} />
       <Counter />
       <PersonForm onSubmit={handleSubmit} />
       <RandomImage keyword={keyword} />
