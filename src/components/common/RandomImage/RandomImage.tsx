@@ -6,7 +6,7 @@ interface RandomImagePropsInterface {
 }
 
 const RandomImage: React.FC<RandomImagePropsInterface> = ({
-  keyword,
+  keyword = "",
 }: RandomImagePropsInterface) => {
   const imageSource = `https://source.unsplash.com/350x200/?${keyword}`;
   return (

@@ -1,25 +1,9 @@
-@use "../../../scss/variable.scss" as vars;
-
-.container {
+.inputWr {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 1.6rem;
+  align-items: center;
+}
 
-  .label {
-    margin-bottom: 0.5rem;
-    color: vars.$primary-color;
-  }
-
-  .input {
-    padding: 1rem;
-    font-size: 1.6rem;
-    border: 0.1rem solid gray;
-    border-radius: 0.5rem;
-
-    &:focus {
-      outline: none;
-      border-color: vars.$primary-color;
-      box-shadow: 0 0 0.5rem vars.$primary-color;
-    }
-  }
+.textAfterInput {
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
 }

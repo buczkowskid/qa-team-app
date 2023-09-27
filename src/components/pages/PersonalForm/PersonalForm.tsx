@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import Button from "components/common/Button/Button";
 import FormikInput from "components/form/formik/FormikInput/FormikInput";
 import { Form, Formik } from "formik";
