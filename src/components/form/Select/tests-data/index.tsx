@@ -22,7 +22,6 @@ export const propsData = {
   placeholder: "Select Test Placeholder",
   customCssClass: "SelectTestClassName",
   onClick: testOnClick,
-  returnOnlyValue: true,
   style: { marginBottom: "30px" },
   tabIndex: 3,
   htmlAttributes: {

@@ -46,7 +46,7 @@ describe("Person Form", () => {
 
     await waitFor(() => {
       expect(nameInputElement).toHaveValue("johnny");
-      expect(screen.getByTestId("error-message")).toBeInTheDocument();
+      expect(screen.getByTestId("name-statusesText")).toBeInTheDocument();
     });
   });
 });

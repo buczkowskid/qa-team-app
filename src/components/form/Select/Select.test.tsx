@@ -1,3 +1,4 @@
+import { waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React, { createRef } from "react";
 import { getRenderedContent, propsData, testOnChange, testOnClick } from "./tests-data";
@@ -21,35 +22,33 @@ describe("Select", () => {
     expect(selectElement).not.toHaveAttribute("disabled");
   });
 
-  test("Should handle 'onClick' prop", () => {
+  test("Should handle 'onClick' prop", async () => {
     const { selectElement } = getRenderedContent();
     userEvent.click(selectElement);
-    expect(testOnClick).toHaveBeenCalled();
-    expect(testOnClick).toHaveBeenCalledTimes(1);
+    await waitFor(() => {
+      expect(testOnClick).toHaveBeenCalled();
+      expect(testOnClick).toHaveBeenCalledTimes(1);
+    });
   });
 
-  test("Should handle 'onChange' prop with true 'returnOnlyValue'", () => {
+  test("Should handle 'onChange' prop", async () => {
     const { selectElement, optionsElements } = getRenderedContent();
     const _optionElement = optionsElements[1].value;
     userEvent.selectOptions(selectElement, _optionElement);
-    expect(testOnChange).toHaveBeenCalledWith(_optionElement);
-    expect(testOnChange).toHaveBeenCalledTimes(1);
+    await waitFor(() => {
+      expect(testOnChange).toHaveBeenCalledWith(_optionElement);
+      expect(testOnChange).toHaveBeenCalledTimes(1);
+    });
   });
 
-  test("Should handle 'onChange' prop with false 'returnOnlyValue'", () => {
-    const { selectElement, optionsElements } = getRenderedContent({ returnOnlyValue: false });
-    const _optionElement = optionsElements[1].value;
-    userEvent.selectOptions(selectElement, _optionElement);
-    expect(testOnChange).not.toHaveBeenCalledWith(_optionElement);
-    expect(testOnChange).toHaveBeenCalledTimes(1);
-  });
-
-  test("Should have proper 'customRef' prop", () => {
+  test("Should have proper 'customRef' prop", async () => {
     const _selectRef = createRef() as React.RefObject<HTMLSelectElement>;
     const _onClickSpy = jest.fn();
     getRenderedContent({ onClick: _onClickSpy, customRef: _selectRef });
     userEvent.click(_selectRef.current as Element);
-    expect(_onClickSpy).toHaveBeenCalledTimes(1);
+    await waitFor(() => {
+      expect(_onClickSpy).toHaveBeenCalledTimes(1);
+    });
   });
 
   test("Should be disabled", () => {
