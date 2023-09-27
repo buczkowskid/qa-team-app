@@ -37,7 +37,6 @@ const Input = ({
   status,
   statusesTexts,
   labelHtmlAttributes,
-  returnOnlyValue,
   onClick,
   required = false,
   minLength,
@@ -54,7 +53,7 @@ const Input = ({
   const _handleOnChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const isAllowed = allowedRegex ? allowedRegex.test(event.target.value) : true;
     if (isAllowed) {
-      onChange(returnOnlyValue ? event.target.value : event);
+      onChange(event);
     }
   };
 
